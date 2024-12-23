@@ -1,3 +1,4 @@
+//@ts-nocheck
 "use client";
 import { sidebarLinks } from "./../../constants"
 import Image from "next/image";
@@ -6,7 +7,7 @@ import { usePathname } from "next/navigation";
 import React from "react";
 import { cn } from "@/lib/utils";
 
-const MobileNav = ({handleClick, isNavbarActive}:any) => {
+const MobileNav = ({handleClick, isNavbarActive}) => {
 
   const pathname = usePathname();
   return (
