@@ -9,7 +9,7 @@ const HomeLayout = ({ children }: { children: ReactNode }) => {
       <Navbar />
       <div className="flex">
         <Sidebar />
-        <section className="w-full bg-dark-2 pt-20 pb-12 px-4 sm:px-8">
+        <section className="w-full bg-dark-2 pt-[5.2rem] pb-12 px-4 sm:px-8">
         {children}
         </section>
       </div>

@@ -16,7 +16,6 @@ export async function middleware(request: NextRequest) {
     if(!token && (
         url.pathname.startsWith("/Upcoming") ||
         url.pathname.startsWith("/Previous") ||        
-        url.pathname.startsWith("/Personal-room") || 
         url.pathname.startsWith("/Recordings") || 
         url.pathname.startsWith("/meeting") ||
         url.pathname == "/"      

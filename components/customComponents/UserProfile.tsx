@@ -1,12 +1,9 @@
 "use client"
 
 import * as React from "react"
-import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu"
-
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
-  DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuLabel,
   DropdownMenuSeparator,
@@ -14,12 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { signOut, useSession } from "next-auth/react"
 
-type Checked = DropdownMenuCheckboxItemProps["checked"]
-
 export function UserProfile() {
-  const [showStatusBar, setShowStatusBar] = React.useState<Checked>(true)
-  const [showActivityBar, setShowActivityBar] = React.useState<Checked>(false)
-  const [showPanel, setShowPanel] = React.useState<Checked>(false)
 
   const {data:session} = useSession()
   const user = session?.user
@@ -28,7 +20,7 @@ export function UserProfile() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <img src={`${imageURL}`} className="w-9 max-sm:mt-1 sm:w-10 rounded-full" alt="user profile"/>
+        <img src={imageURL} className="w-9 max-sm:mt-1 sm:w-10 rounded-full" alt="profile image"/>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-max p-2 flex flex-col gap-1">
         <DropdownMenuLabel className="text-xl pl-0">Profile</DropdownMenuLabel>

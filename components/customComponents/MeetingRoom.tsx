@@ -12,7 +12,8 @@ import { Button } from "../ui/button";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
 
-const MeetingRoom = (meetingId: { meetingId: string }) => {
+const MeetingRoom = (meetingId : {meetingId: string}) => {
+  const id = meetingId.meetingId;
   const call = useCall();
   const router = useRouter();
   const { useCallCallingState } = useCallStateHooks();
@@ -38,11 +39,11 @@ const MeetingRoom = (meetingId: { meetingId: string }) => {
   }
 
   return (
-    <div className="relative min-h-screen h-max w-full flex-col-center lg:p-20 bg-dark-1 ">
+    <div className="relative min-h-screen h-max w-full flex-col-center lg:p-20 lg:px-28 bg-dark-1 ">
       <div
         className="absolute top-3 right-3 max-sm:scale-75"
         onClick={() => {
-          navigator.clipboard.writeText(`${meetingId}`);
+          navigator.clipboard.writeText(`${id}`);
           toast({ title: "ID copied" });
         }}
       >

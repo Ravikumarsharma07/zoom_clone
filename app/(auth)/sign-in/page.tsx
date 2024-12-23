@@ -11,10 +11,9 @@ import { FormField } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signIn } from "next-auth/react";
 import React, { useState } from "react";
-import { Form, FormProvider, useForm } from "react-hook-form";
+import {  FormProvider, useForm } from "react-hook-form";
 import { z } from "zod";
 import Link from "next/link";
-import axios from "axios";
 import { Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
@@ -26,7 +25,7 @@ const signInSchema = z.object({
   password: z.string(),
 });
 
-const page = () => {
+const Page = () => {
   const form = useForm<z.infer<typeof signInSchema>>({
     resolver: zodResolver(signInSchema),
     defaultValues: {
@@ -127,4 +126,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

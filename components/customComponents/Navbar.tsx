@@ -3,7 +3,6 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { Button } from "../ui/button";
 import { MenuIcon } from "lucide-react";
-import Sidebar from "./Sidebar";
 import MobileNav from "./MobileNav";
 import { UserProfile } from "./UserProfile";
 

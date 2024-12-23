@@ -6,7 +6,7 @@ import { useGetCalls } from "@/hooks/useGetCalls";
 import { signOut } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 
-const page = () => {
+const Page = () => {
 
   const [time,setTime] = useState(new Date().toLocaleTimeString("en-IN", {hour:"2-digit",minute:'2-digit'}));
 
@@ -25,8 +25,7 @@ const page = () => {
 
   const {upcomingCalls, isLoading} = useGetCalls();
   const upcomingMeeting = upcomingCalls[0];
-  const meetingTime = upcomingMeeting?.state?.startsAt$?.source?._value.toLocaleTimeString("en-IN", {hour:"2-digit",minute:'2-digit'});
-
+  const meetingTime = upcomingMeeting?.state?.startsAt$?.source?._value.toLocaleString("en-IN");
   return (
 
     <section className="w-full min-h-screen h-max pt-8 sm:px-2 flex flex-col gap-5 ">
@@ -44,4 +43,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

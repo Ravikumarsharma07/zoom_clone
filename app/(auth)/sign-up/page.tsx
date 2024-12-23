@@ -16,13 +16,9 @@ import { z } from "zod";
 import Link from "next/link";
 import axios from "axios";
 import { useToast } from "@/hooks/use-toast";
-import { NextApiResponse } from "next";
-import { useRouter } from "next/navigation";
 import { ApiResponse } from "@/types/ApiResponse";
 import { Loader2 } from "lucide-react";
-import UserModel from "@/models/users";
-import mongoose from "mongoose";
-// import { Google } from "@mui/icons-material";
+import { useRouter } from "next/navigation";
 
 const signUpSchema = z.object({
   // identifier can be username or Email
@@ -36,7 +32,7 @@ const signUpSchema = z.object({
     .min(8, { message: "Password must contain atleast 8 characters" }),
 });
 
-const page = () => {
+const Page = () => {
   const form = useForm<z.infer<typeof signUpSchema>>({
     resolver: zodResolver(signUpSchema),
     defaultValues: {
@@ -165,4 +161,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
