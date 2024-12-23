@@ -16,7 +16,6 @@ const Navbar = () => {
       <div className="absolute left-0 top-0 sm:hidden">
         <MobileNav
           isNavbarActive={isNavbarActive}
-          setIsNavbarActive={setIsNavbarActive}
           handleClick={handleClick}
         />
       </div>

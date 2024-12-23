@@ -13,7 +13,6 @@ import { Button } from "../ui/button";
 import { useSession } from "next-auth/react";
 import {
   Call,
-  useCall,
   useStreamVideoClient,
 } from "@stream-io/video-react-sdk";
 import { useToast } from "@/hooks/use-toast";
@@ -127,6 +126,7 @@ const MeetingTypes = () => {
         title: "Meeting Created",
       });
     } catch (error) {
+      console.log(error)
       toast({title:"Error occured", description:"Error occured while creating meeting", variant:"destructive"})
     }
   };

@@ -1,9 +1,6 @@
-//@ts-nocheck
 "use client";
 import MeetingTypes from "@/components/customComponents/MeetingTypes";
-import { Button } from "@/components/ui/button";
 import { useGetCalls } from "@/hooks/useGetCalls";
-import { signOut } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 
 const Page = () => {
@@ -13,19 +10,20 @@ const Page = () => {
   let now =  new Date()
   const date = (new Intl.DateTimeFormat("en-IN", {dateStyle:'full'})).format(now)
   
-  useEffect(() => {
-    updateTime();
-  }, []);
-
   const updateTime = () => {
     setInterval(() => {
-        setTime(new Date().toLocaleTimeString("en-IN", {hour:"2-digit",minute:'2-digit'}));
+      setTime(new Date().toLocaleTimeString("en-IN", {hour:"2-digit",minute:'2-digit'}));
     }, 1000 * 60);
   };
 
+  useEffect(() => {
+    updateTime();
+  }, []);
+  
   const {upcomingCalls, isLoading} = useGetCalls();
   const upcomingMeeting = upcomingCalls[0];
-  const meetingTime = upcomingMeeting?.state?.startsAt$?.source?._value.toLocaleString("en-IN");
+  //@ts-expect-error
+  const meetingTime = upcomingMeeting?.state?.startsAt$?.source?._value.toLocaleString("en-IN")
   return (
 
     <section className="w-full min-h-screen h-max pt-8 sm:px-2 flex flex-col gap-5 ">

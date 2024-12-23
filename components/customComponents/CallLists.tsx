@@ -1,4 +1,3 @@
-//@ts-nocheck
 "use client";
 import { useGetCalls } from "@/hooks/useGetCalls";
 import { Call, CallRecording } from "@stream-io/video-react-sdk";
@@ -53,7 +52,7 @@ const CallLists = ({ type }: { type: "upcoming" | "recordings" | "ended" }) => {
         const callRecordings = callData
         .filter((call) => call.recordings.length > 0)
         .flatMap((call) => call.recordings);
-        
+        //@ts-expect-error
         setMeetingRecordings(callRecordings);
       } catch (error) {
         toast({ title: "Failed to fetch recordings, try again", variant:"destructive" });

@@ -4,7 +4,7 @@ const nextConfig = {
         domains: ['lh3.googleusercontent.com/'], // Add external image domains here
       },
       eslint: {
-        dirs: ['app', 'components'], 
+        dirs: [], 
       },
 };
 

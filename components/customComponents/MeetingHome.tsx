@@ -10,7 +10,7 @@ import React, { useState } from "react";
 import MeetingRoom from "./MeetingRoom";
 import MeetingSetUp from "./MeetingSetUp";
 
-const MeetingHome = (meetingId:any) => {
+const MeetingHome = (meetingId:{id:string}) => {
   const {id} = meetingId;
     const [isSetUpComplete, setIsSetUpComplete] = useState(false);
     const { call, isCallLoading } = useGetCallById(id);
