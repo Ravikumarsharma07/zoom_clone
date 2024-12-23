@@ -32,9 +32,9 @@ const MeetingSetUp = ({
     }
   }, [isMicCamToggledOn, call?.camera, call?.microphone]);
   return (
-    <div className="flex-center flex-col gap-4 w-full sm:w-[600px]">
+    <div className="flex-center flex-col gap-4 w-full sm:w-[600px] ">
       <div
-        className="absolute top-3 right-3 max-sm:scale-75"
+        className="absolute top-3 right-1 sm:right-3 max-sm:scale-75 z-50"
         onClick={() => {
           navigator.clipboard.writeText(`${meetingId}`);
           toast({ title: "ID copied" });
@@ -45,7 +45,9 @@ const MeetingSetUp = ({
         </Button>
       </div>
       <h1 className="text-white font-semibold text-3xl">Set up</h1>
+      <div className="w-max max-sm:scale-75">
       {isMediaAvailable && <VideoPreview />}
+      </div>
       <label>
         <input
           type="checkbox"
