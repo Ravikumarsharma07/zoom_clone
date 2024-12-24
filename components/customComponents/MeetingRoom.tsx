@@ -27,8 +27,8 @@ const MeetingRoom = ({meetingId, setIsSetUpComplete} : {meetingId: string, setIs
     router.push("/");
   };
 
-  const leaveMeeting = async () => {
-    await call?.leave();
+  const leaveMeeting = () => {
+    call?.leave();
     router.push("/");
   };
 
@@ -46,7 +46,7 @@ const MeetingRoom = ({meetingId, setIsSetUpComplete} : {meetingId: string, setIs
   }
 
   return (
-    <div className="relative sm:min-h-screen h-max w-full flex-col-center max-sm:pt-16 lg:p-20 lg:px-28 bg-dark-2 ">
+    <div className="relative sm:min-h-screen max-sm:min-h-screen h-max w-full flex-col-center max-sm:pt-16 lg:p-20 lg:px-28 bg-dark-2 ">
       <div
         className="absolute top-3 right-3 max-sm:scale-75"
         onClick={() => {
@@ -68,7 +68,7 @@ const MeetingRoom = ({meetingId, setIsSetUpComplete} : {meetingId: string, setIs
             className="bg-red-600 hover:bg-red-700 rounded-xl"
             onClick={callEnd}
           >
-            End call for everyone
+            End call
           </Button>
         )}
       </div>
