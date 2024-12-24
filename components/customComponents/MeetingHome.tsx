@@ -18,7 +18,7 @@ const MeetingHome = (meetingId:{id:string}) => {
     useEffect(() => {
 
       return  () => {
-        call?.leave().catch(() => toast({title:"Failed to leave the call"}));
+        call?.leave();
       };
     }, [call]);
     if (isCallLoading || !call) {
